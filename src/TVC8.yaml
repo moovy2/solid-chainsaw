@@ -1,0 +1,16 @@
+---
+- name: Escape "\<tab>"
+  from: '@ingydotnet'
+  tags: double escape
+  yaml: |
+    --- "a\———»b\tc"
+  tree: |
+    +STR
+     +DOC ---
+      =VAL "a\tb\tc
+     -DOC
+    -STR
+  json: |
+    "a\tb\tc"
+  dump: |
+    --- "a\tb\tc"
